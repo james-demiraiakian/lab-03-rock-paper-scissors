@@ -23,19 +23,8 @@ input[type=radio]{
     display:none;
 }
 
-#blue {
-    color: blue;
-}
-
-#red {
-    color:red;
-}
-#purple {
-    color: purple;
-}
-
 input[type=radio]:checked + img {
-    border: 5px solid blue;
+    border: 5px solid black;
 }
 
 .hidden {
