@@ -3,30 +3,39 @@ import { didUserWin } from '../utils.js';
 
 const test = QUnit.test;
 
-// user: tails, throw: heads -- lose -- return false
-// user: tails, throw: tails -- win -- return true
-// user: heads, throw: heads -- win -- return true
-// user: heads, throw: tails -- loss -- return false
+
 test('userChoice: pig, actualChoice: meg', (expect) => {
     const expected = 'escaped';
     const actual = didUserWin('pig', 'meg');
     expect.equal(actual, expected);
 });
 
-// test('user: tails, throw: tails', (expect) => {
-//     const expected = true;
-//     const actual = didUserWin('tails', 'tails');
-//     expect.equal(actual, expected);
-// });
+test('userChoice: meg, actualChoice:flashlight', (expect) => {
+    const expected = 'escaped';
+    const actual = didUserWin('meg', 'flashlight');
+    expect.equal(actual, expected);
+});
 
-// test('user: heads, throw: heads', (expect) => {
-//     const expected = true;
-//     const actual = didUserWin('heads', 'heads');
-//     expect.equal(actual, expected);
-// });
+test('userChoice: flashlight, actualChoice: pig', (expect) => {
+    const expected = 'escaped';
+    const actual = didUserWin('flashlight', 'pig');
+    expect.equal(actual,expected);
+});
 
-// test('user: heads, throw: tails', (expect) => {
-//     const expected = false;
-//     const actual = didUserWin('heads', 'tails');
-//     expect.equal(actual, expected);
-// });
+test('userChoice: meg, actualChoice: pig', (expect) => {
+    const expected = 'sacrificed';
+    const actual = didUserWin('meg', 'pig');
+    expect.equal(actual,expected);
+});
+
+test('userChoice: pig, actualChoice: flashlight', (expect) => {
+    const expected = 'sacrificed';
+    const actual = didUserWin('pig', 'flashlight');
+    expect.equal(actual,expected);
+});
+
+test('userChoice: flashlight, actualChoice: meg', (expect) => {
+    const expected= 'sacrificed';
+    const actual = didUserWin('flashlight', 'meg');
+    expect.equal(actual,expected);
+})
