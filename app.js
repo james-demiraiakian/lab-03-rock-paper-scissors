@@ -1,4 +1,5 @@
-import { didUserWin } from "./utils";
+import { didUserWin, getRandomMove } from "./utils.js";
+
 // DOM ELEMENTS
 const playButton = document.getElementById('play');
 const spanEscaped = document.getElementById('escaped');
@@ -12,3 +13,22 @@ let sacrificed = 0;
 let standoff = 0;
 
 //EVENT LISTENERS
+playButton.addEventListener ('click', ()=>{
+const selected = document.querySelector('input[type=radio]:checked');
+if(!selected) {
+  return error.classList.remove('hidden');
+}
+error.classList.add('hidden');
+const userThrow = selected.value;
+const computerThrow = getRandomMove();
+if(didUserWin(userThrow, computerThrow)){
+escaped++;
+} else {
+  sacrificed++;
+}
+
+spanEscaped.textContent = escaped;
+spanSacrificed.textContent = sacrificed;
+spanStandoff.textContent = standoff;
+
+})

@@ -1,4 +1,4 @@
-export function didUserWin(userChoice, actualFlip){
+export function didUserWin(userChoice, actualChoice){
     // if (userChoice === actualFlip) {
     //     return true;
     // } else {
@@ -12,9 +12,13 @@ export function didUserWin(userChoice, actualFlip){
 // OPTION 3
     // return userChoice === actualFlip ? true : false;
 
-    return userChoice === actualFlip;
+    return userChoice === actualChoice;
 };
 
+export function getRandomMove(){
+    return ['pig', 'meg', 'flashlight'][Math.floor(Math.random() * 3) + 1];
+};
+console.log(pig);
 // USER CHOICE
 // rock, paper, scissors
 
