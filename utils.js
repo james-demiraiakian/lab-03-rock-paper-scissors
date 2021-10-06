@@ -2,18 +2,18 @@ export function didUserWin(userChoice, actualChoice){
     if (userChoice === actualChoice) {
         return 'standoff';
     } else if (userChoice === 'pig' && actualChoice === 'meg') {
-        return 'survived';
+        return 'escaped';
     } else if (userChoice === 'meg' && actualChoice === 'flashlight') {
-        return 'survived';  
+        return 'escaped';  
     } else if (userChoice === 'flashlight' && actualChoice === 'pig') {
-        return 'survived';
+        return 'escaped';
     } else {
         return 'sacrificed';
     }
 };
 
 export function getRandomMove(){
-    return ['pig', 'meg', 'flashlight'][Math.floor(Math.random() * 3) + 1];
+    return ['meg', 'pig', 'flashlight'][Math.floor(Math.random() * 3)];
 };
 
 // USER CHOICE

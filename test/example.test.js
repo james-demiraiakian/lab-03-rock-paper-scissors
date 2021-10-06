@@ -8,7 +8,7 @@ const test = QUnit.test;
 // user: heads, throw: heads -- win -- return true
 // user: heads, throw: tails -- loss -- return false
 test('userChoice: pig, actualChoice: meg', (expect) => {
-    const expected = true;
+    const expected = 'escaped';
     const actual = didUserWin('pig', 'meg');
     expect.equal(actual, expected);
 });

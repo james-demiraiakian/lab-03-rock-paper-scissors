@@ -20,8 +20,9 @@ if(!selected) {
 }
 error.classList.add('hidden');
 const userChoice = selected.value;
-const computerChoice = getRandomMove();
-if(didUserWin(userChoice, computerChoice)){
+const actualChoice = getRandomMove();
+console.log(actualChoice);
+if(didUserWin(userChoice, actualChoice)){
 escaped++;
 } else {
   sacrificed++;
