@@ -1,15 +1,27 @@
 body {
-    font-family: sans-serif;
+    background-color: #121212;
+    color: #fefefe;
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
+    text-align: center;
 }
+
+h1 {
+    font-family:  'Nosifer', serif;
+    font-size: 4rem;
+    color: #bb3530;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
 input[type=radio]{
     display:none;
 }
-
-/* input[type=radio]:checked + .label {
-    font-size: 2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-} */
 
 #blue {
     color: blue;
@@ -24,4 +36,12 @@ input[type=radio]{
 
 input[type=radio]:checked + img {
     border: 5px solid blue;
+}
+
+.hidden {
+    display: none;
+}
+
+#error {
+    color: red;
 }

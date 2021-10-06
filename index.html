@@ -5,37 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/home.css">
-    <title>Rock Paper Scissors</title>
+    <title>Pig, Meg, Flashlight</title>
 </head>
 
 <body>
-    <!-- COLORS EXAMPLE
-         <label>
-        <input type="radio" name="colors" id="blue" value="blue">
-        <span class="label" id="blue">Blue</span>
-    </label>
-    <label>
-        <input type="radio" name="colors" id="red" value="red">
-        <span class="label" id="red">Red</span>
-    </label>
-    <label>
-        <input type="radio" name="colors" id="purple" value="purple">
-        <span class="label" id="purple">Purple</span>
-    </label> -->
+    <h1>Meg vs. Pig</h1>
+    <h2>rock, paper, scissors... dead by daylight style</h2>
+    <section>
+        <label>
+            <input type="radio" name="tools" id="pig" value="pig">
+            <img src="./assets/pig.png" alt="pig">
+        </label>
+        <label>
+            <input type="radio" name="tools" id="meg" value="meg">
+            <img src="./assets/meg.png" alt="meg">
+        </label>
+        <label>
+            <input type="radio" name="tools" id="flashlight" value="flashlight">
+            <img src="./assets/flashlight.png" alt="flashlight">
+        </label>
+    </section>
+    <p id="error" class="hidden">You need to pick heads or tails!</p>
+    <button id="play">play!</button>
+    <p id="result"></p>
+    <p>You have won <span id="wins">0</span> times.</p>
+    <p>You have lost <span id="losses">0</span> times.</p>
 
-    <h1>coin flip demo</h1>
-    <label>
-        <input type="radio" name="coins" id="heads">
-        <img src="" alt="heads">
-    </label>
-    <label>
-        <input type="radio" name="coins" id="tails">
-        <img src="" alt="tails">
-    </label>
     <script type="module" src="./app.js"></script>
 </body>
 
