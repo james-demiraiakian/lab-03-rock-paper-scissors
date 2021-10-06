@@ -19,9 +19,9 @@ if(!selected) {
   return error.classList.remove('hidden');
 }
 error.classList.add('hidden');
-const userThrow = selected.value;
-const computerThrow = getRandomMove();
-if(didUserWin(userThrow, computerThrow)){
+const userChoice = selected.value;
+const computerChoice = getRandomMove();
+if(didUserWin(userChoice, computerChoice)){
 escaped++;
 } else {
   sacrificed++;

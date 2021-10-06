@@ -1,34 +1,32 @@
 export function didUserWin(userChoice, actualChoice){
-    // if (userChoice === actualFlip) {
-    //     return true;
-    // } else {
-    //     return false;
-    // }
-// OPTION 2
-    // if (userChoice === actualFlip) {
-    //     return true;
-    // }
-    // return false;
-// OPTION 3
-    // return userChoice === actualFlip ? true : false;
+    if (userChoice === actualChoice) {
+        return 'standoff';
+    } else if (userChoice === 'pig' && actualChoice === 'meg') {
+        return 'survived';
+    } else if (userChoice === 'meg' && actualChoice === 'flashlight') {
+        return 'survived';  
+    } else if (userChoice === 'flashlight' && actualChoice === 'pig') {
+        return 'survived';
+    } else {
+        return 'sacrificed';
+    }
 
-    return userChoice === actualChoice;
 };
 
 export function getRandomMove(){
     return ['pig', 'meg', 'flashlight'][Math.floor(Math.random() * 3) + 1];
 };
-console.log(pig);
+
 // USER CHOICE
-// rock, paper, scissors
+// pig, meg, flashlight
 
 // COMPUTER THROW
-// rock, paper, scissors
+// pig, meg, flashlight
 
-// possible outcomes: win, lose, draw
+// possible outcomes: survived, sacrificed, standoff
 
-// if the userThrow == computerThrow return 'draw'
-// if the user throws rock && if computer throws scissors, return 'win'
-// if the user throws paper && if the computer throws rock, return 'win'
+// if the userChoice == computerChoice return 'standoff'
+// if the user throws pig && if computer throws flashlight, return 'survived'
+// if the user throws meg && if the computer throws flashlight, return 'survived'
 // if the user throws scissors && if the computer throws paper, return 'win'
 // else return 'lose'
