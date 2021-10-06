@@ -21,15 +21,21 @@ if(!selected) {
 error.classList.add('hidden');
 const userChoice = selected.value;
 const actualChoice = getRandomMove();
-console.log(actualChoice);
-if(didUserWin(userChoice, actualChoice)){
-escaped++;
+// USER WIN
+// USER LOSS
+// USER TIE
+if(userChoice === actualChoice){
+  standoff++;
+} else if(didUserWin(userChoice,actualChoice)){
+  escaped++;
 } else {
   sacrificed++;
-}
+} 
+console.log('user choice', userChoice);
+console.log('computer choice', actualChoice);
 
 spanEscaped.textContent = escaped;
 spanSacrificed.textContent = sacrificed;
 spanStandoff.textContent = standoff;
 
-})
+});

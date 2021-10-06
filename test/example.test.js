@@ -38,4 +38,4 @@ test('userChoice: flashlight, actualChoice: meg', (expect) => {
     const expected= 'sacrificed';
     const actual = didUserWin('flashlight', 'meg');
     expect.equal(actual,expected);
-})
+});
