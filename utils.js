@@ -10,7 +10,6 @@ export function didUserWin(userChoice, actualChoice){
     } else {
         return 'sacrificed';
     }
-
 };
 
 export function getRandomMove(){
