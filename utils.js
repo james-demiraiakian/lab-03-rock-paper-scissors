@@ -2,17 +2,17 @@ export function didUserWin(userChoice, actualChoice){
     if (userChoice === actualChoice) {
         return 'standoff';
     } else if (userChoice === 'pig' && actualChoice === 'meg') {
-        return 'escaped';
+        return 'pig-beats-meg';
     } else if (userChoice === 'meg' && actualChoice === 'flashlight') {
-        return 'escaped';  
+        return 'meg-beats-flashlight';  
     } else if (userChoice === 'flashlight' && actualChoice === 'pig') {
-        return 'escaped';
+        return 'flashlight-beats-pig';
     } else if (userChoice === 'meg' && actualChoice === 'pig'){
-        return 'sacrificed';
+        return 'meg-loses-pig';
     } else if (userChoice === 'pig' && actualChoice === 'flashlight'){
-        return 'sacrificed';
+        return 'pig-loses-flashlight';
     } else if (userChoice === 'flashlight' && actualChoice === 'meg'){
-        return 'sacrificed';
+        return 'flashlight-loses-meg';
     }
 }
 

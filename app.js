@@ -24,13 +24,33 @@ playButton.addEventListener ('click', ()=>{
 
     if (userChoice === actualChoice){
         standoff++;
-        result.textContent = `It was a draw... maybe someone rage quit?`;
-    } else if (didUserWin(userChoice, actualChoice) === 'escaped'){
+        result.textContent = `computer ${actualChoice}. It was a draw... maybe someone rage quit?`;
+
+    } else if (didUserWin(userChoice, actualChoice) === 'pig-beats-meg'){
         escaped++;
-        result.textContent = `rank up! they really thought they could outplay you with ${actualChoice}?`;
-    } else {
+        result.textContent = `computer ${actualChoice}. rank up! they really thought they could outplay you with ${actualChoice}?`;
+    
+    } else if (didUserWin(userChoice, actualChoice) === 'meg-beats-flashlight'){
+        escaped++;
+        result.textContent = `computer ${actualChoice}. uh oh, meg found a flashlight...`;
+
+    } else if (didUserWin(userChoice, actualChoice) === 'flashlight-beats-pig'){
+        escaped++;
+        result.textContent = `computer ${actualChoice}. If only they brought lightborn...`;
+
+    } else if (didUserWin(userChoice, actualChoice) === 'meg-loses-pig'){
         sacrificed++;
-        result.textContent = `rekt by ${actualChoice}.`;
+        result.textContent = `computer ${actualChoice}. Rekt by pig.`;
+
+    } else if (didUserWin(userChoice, actualChoice) === 'pig-loses-flashlight'){
+        sacrificed++;
+        result.textContent = `computer ${actualChoice}. You should have brought lightborn`;
+    } else if (didUserWin(userChoice, actualChoice) === 'flashlight-loses-meg'){
+        sacrificed++;
+        result.textContent = `computer ${actualChoice}. Looks like Meg dropped her flashlight...`;
+    }
+    else {
+        result.textContent = `error, try again.`;
     }
 
     spanEscaped.textContent = escaped;
