@@ -6,6 +6,7 @@ const spanSacrificed = document.getElementById('sacrificed');
 const spanStandoff = document.getElementById('standoff');
 const error = document.getElementById('error');
 const result = document.getElementById('result');
+const reset = document.getElementById('reset');
 
 let escaped = 0;
 let sacrificed = 0;
@@ -31,6 +32,16 @@ playButton.addEventListener ('click', ()=>{
         sacrificed++;
         result.textContent = `rekt by ${actualChoice}.`;
     }
+
+    spanEscaped.textContent = escaped;
+    spanSacrificed.textContent = sacrificed;
+    spanStandoff.textContent = standoff;
+});
+
+reset.addEventListener ('click', ()=>{
+    escaped = 0;
+    sacrificed = 0;
+    standoff = 0;
 
     spanEscaped.textContent = escaped;
     spanSacrificed.textContent = sacrificed;
