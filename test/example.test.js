@@ -19,23 +19,23 @@ test('userChoice: meg, actualChoice:flashlight', (expect) => {
 test('userChoice: flashlight, actualChoice: pig', (expect) => {
     const expected = 'escaped';
     const actual = didUserWin('flashlight', 'pig');
-    expect.equal(actual,expected);
+    expect.equal(actual, expected);
 });
 
 test('userChoice: meg, actualChoice: pig', (expect) => {
     const expected = 'sacrificed';
     const actual = didUserWin('meg', 'pig');
-    expect.equal(actual,expected);
+    expect.equal(actual, expected);
 });
 
 test('userChoice: pig, actualChoice: flashlight', (expect) => {
     const expected = 'sacrificed';
     const actual = didUserWin('pig', 'flashlight');
-    expect.equal(actual,expected);
+    expect.equal(actual, expected);
 });
 
 test('userChoice: flashlight, actualChoice: meg', (expect) => {
-    const expected= 'sacrificed';
+    const expected = 'sacrificed';
     const actual = didUserWin('flashlight', 'meg');
-    expect.equal(actual,expected);
+    expect.equal(actual, expected);
 });
