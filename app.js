@@ -6,6 +6,7 @@ const spanSacrificed = document.getElementById('sacrificed');
 const spanStandoff = document.getElementById('standoff');
 const error = document.getElementById('error');
 const result = document.getElementById('result');
+const resetButton = document.getElementById('reset');
 
 let escaped = 0;
 let sacrificed = 0;
