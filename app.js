@@ -7,6 +7,7 @@ const spanStandoff = document.getElementById('standoff');
 const error = document.getElementById('error');
 const result = document.getElementById('result');
 const reset = document.getElementById('reset');
+// const imageBlind = document.getElementById('blind');
 
 let escaped = 0;
 let sacrificed = 0;
@@ -25,6 +26,7 @@ playButton.addEventListener ('click', ()=>{
     if (userChoice === actualChoice){
         standoff++;
         result.textContent = `computer ${actualChoice}. It was a draw... maybe someone rage quit?`;
+        // imageBlind.classList.remove('hidden');
 
     } else if (didUserWin(userChoice, actualChoice) === 'pig-beats-meg'){
         escaped++;
@@ -45,6 +47,7 @@ playButton.addEventListener ('click', ()=>{
     } else if (didUserWin(userChoice, actualChoice) === 'pig-loses-flashlight'){
         sacrificed++;
         result.textContent = `computer ${actualChoice}. You should have brought lightborn`;
+
     } else if (didUserWin(userChoice, actualChoice) === 'flashlight-loses-meg'){
         sacrificed++;
         result.textContent = `computer ${actualChoice}. Looks like Meg dropped her flashlight...`;
