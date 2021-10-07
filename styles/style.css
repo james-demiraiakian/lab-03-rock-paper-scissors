@@ -58,8 +58,8 @@ filter: grayscale(0%);
 }
 
 img {
-    filter: grayscale(90%);
-    border-radius: 50%;
+    filter: grayscale(0%);
+    border-radius: 0%;
     padding: 10px;
 }
 
