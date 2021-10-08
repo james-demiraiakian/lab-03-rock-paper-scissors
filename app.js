@@ -13,9 +13,9 @@ const meg = document.getElementById('meg');
 const flashlight = document.getElementById('flashlight');
 const pig = document.getElementById('pig');
 
-let escaped = 0;
-let sacrificed = 0;
-let standoff = 0;
+// let escaped = 0;
+// let sacrificed = 0;
+// let standoff = 0;
 
 meg.addEventListener('click', ()=>{
     outcome('meg');
@@ -29,7 +29,7 @@ pig.addEventListener('click', ()=>{
     outcome('pig');
 })
 
-playButton.addEventListener ('click', ()=>{
+// playButton.addEventListener ('click', ()=>{
     // const selected = document.querySelector('input[type=radio]:checked');
     // if (!selected) {
     //     return error.classList.remove('hidden');
@@ -82,7 +82,7 @@ playButton.addEventListener ('click', ()=>{
     // spanEscaped.textContent = escaped;
     // spanSacrificed.textContent = sacrificed;
     // spanStandoff.textContent = standoff;
-});
+// });
 
 reset.addEventListener ('click', ()=>{
     escaped = 0;
