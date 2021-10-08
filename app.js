@@ -7,7 +7,8 @@ const spanStandoff = document.getElementById('standoff');
 const error = document.getElementById('error');
 const result = document.getElementById('result');
 const reset = document.getElementById('reset');
-// const imageBlind = document.getElementById('blind');
+const imageBlind = document.getElementById('blind');
+const imageDead = document.getElementById('dead');
 
 let escaped = 0;
 let sacrificed = 0;
@@ -26,11 +27,12 @@ playButton.addEventListener ('click', ()=>{
     if (userChoice === actualChoice){
         standoff++;
         result.textContent = `computer ${actualChoice}. It was a draw... maybe someone rage quit?`;
-        // imageBlind.classList.remove('hidden');
 
     } else if (didUserWin(userChoice, actualChoice) === 'pig-beats-meg'){
         escaped++;
-        result.textContent = `computer ${actualChoice}. rank up! they really thought they could outplay you with ${actualChoice}?`;
+        result.textContent = `computer ${actualChoice}. lol sucks to suck.`;
+        imageDead.classList.remove('hidden');
+        imageBlind.classList.add('hidden');
     
     } else if (didUserWin(userChoice, actualChoice) === 'meg-beats-flashlight'){
         escaped++;
@@ -39,14 +41,20 @@ playButton.addEventListener ('click', ()=>{
     } else if (didUserWin(userChoice, actualChoice) === 'flashlight-beats-pig'){
         escaped++;
         result.textContent = `computer ${actualChoice}. If only they brought lightborn...`;
+        imageBlind.classList.remove('hidden');
+        imageDead.classList.add('hidden');
 
     } else if (didUserWin(userChoice, actualChoice) === 'meg-loses-pig'){
         sacrificed++;
         result.textContent = `computer ${actualChoice}. Rekt by pig.`;
+        imageDead.classList.remove('hidden');
+        imageBlind.classList.add('hidden');
 
     } else if (didUserWin(userChoice, actualChoice) === 'pig-loses-flashlight'){
         sacrificed++;
         result.textContent = `computer ${actualChoice}. You should have brought lightborn`;
+        imageBlind.classList.remove('hidden');
+        imageDead.classList.add('hidden');
 
     } else if (didUserWin(userChoice, actualChoice) === 'flashlight-loses-meg'){
         sacrificed++;
