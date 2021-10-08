@@ -24,6 +24,8 @@ export function getRandomMove(){
 const spanEscaped = document.getElementById('escaped');
 const spanSacrificed = document.getElementById('sacrificed');
 const spanStandoff = document.getElementById('standoff');
+const imageBlind = document.getElementById('blind');
+const imageDead = document.getElementById('dead');
 
 console.log(spanEscaped, spanSacrificed, spanStandoff);
 
@@ -32,25 +34,19 @@ let sacrificed = 0;
 let standoff = 0;
 
 export function outcome(selected){
-    // const selected = document.querySelector('input[type=radio]:checked');
-    // if (!selected) {
-    //     return error.classList.remove('hidden');
-    // }
 
-    error.classList.add('hidden');
     const userChoice = selected;
     const actualChoice = getRandomMove();
 
     if (userChoice === actualChoice){
         standoff++;
         result.textContent = `It was a draw... maybe someone rage quit?`;
-        // spanStandoff.textContent = standoff;
 
     } else if (didUserWin(userChoice, actualChoice) === 'pig-beats-meg'){
         escaped++;
         result.textContent = `computer ${actualChoice}. lol sucks to suck.`;
-        // imageDead.classList.remove('hidden');
-        // imageBlind.classList.add('hidden');
+        imageDead.classList.remove('hidden');
+        imageBlind.classList.add('hidden');
 
     } else if (didUserWin(userChoice, actualChoice) === 'meg-beats-flashlight'){
         escaped++;
@@ -59,26 +55,23 @@ export function outcome(selected){
     } else if (didUserWin(userChoice, actualChoice) === 'flashlight-beats-pig'){
         escaped++;
         result.textContent = `computer ${actualChoice}. If only they brought lightborn...`;
-        // imageBlind.classList.remove('hidden');
-        // imageDead.classList.add('hidden');
+        imageBlind.classList.remove('hidden');
+        imageDead.classList.add('hidden');
 
     } else if (didUserWin(userChoice, actualChoice) === 'meg-loses-pig'){
         sacrificed++;
-        // spanSacrificed.textContent = sacrificed;
         result.textContent = `computer ${actualChoice}. Rekt by pig.`;
-        // imageDead.classList.remove('hidden');
-        // imageBlind.classList.add('hidden');
+        imageDead.classList.remove('hidden');
+        imageBlind.classList.add('hidden');
 
     } else if (didUserWin(userChoice, actualChoice) === 'pig-loses-flashlight'){
         sacrificed++;
-        // spanSacrificed.textContent = sacrificed;
         result.textContent = `of course she has a ${actualChoice}. You should have brought lightborn.`;
-        // imageBlind.classList.remove('hidden');
-        // imageDead.classList.add('hidden');
+        imageBlind.classList.remove('hidden');
+        imageDead.classList.add('hidden');
 
     } else if (didUserWin(userChoice, actualChoice) === 'flashlight-loses-meg'){
         sacrificed++;
-        // spanSacrificed.textContent = sacrificed;
         result.textContent = `computer ${actualChoice}. Looks like Meg dropped her flashlight...`;
     }
     else {
