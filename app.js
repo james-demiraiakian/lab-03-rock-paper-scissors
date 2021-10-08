@@ -26,7 +26,7 @@ playButton.addEventListener ('click', ()=>{
 
     if (userChoice === actualChoice){
         standoff++;
-        result.textContent = `computer ${actualChoice}. It was a draw... maybe someone rage quit?`;
+        result.textContent = `It was a draw... maybe someone rage quit?`;
 
     } else if (didUserWin(userChoice, actualChoice) === 'pig-beats-meg'){
         escaped++;
@@ -52,7 +52,7 @@ playButton.addEventListener ('click', ()=>{
 
     } else if (didUserWin(userChoice, actualChoice) === 'pig-loses-flashlight'){
         sacrificed++;
-        result.textContent = `computer ${actualChoice}. You should have brought lightborn`;
+        result.textContent = `of course she has a ${actualChoice}. You should have brought lightborn.`;
         imageBlind.classList.remove('hidden');
         imageDead.classList.add('hidden');
 
