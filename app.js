@@ -1,14 +1,19 @@
 import { didUserWin, getRandomMove, outcome } from './utils.js';
 
 const playButton = document.getElementById('play');
+const spanEscaped = document.getElementById('escaped');
+const spanSacrificed = document.getElementById('sacrificed');
+const spanStandoff = document.getElementById('standoff');
 const error = document.getElementById('error');
 const result = document.getElementById('result');
 const reset = document.getElementById('reset');
-// const imageBlind = document.getElementById('blind');
-// const imageDead = document.getElementById('dead');
 const meg = document.getElementById('meg');
 const flashlight = document.getElementById('flashlight');
 const pig = document.getElementById('pig');
+
+let escaped = 0;
+let sacrificed = 0;
+let standoff = 0;
 
 meg.addEventListener('click', ()=>{
     outcome('meg');
